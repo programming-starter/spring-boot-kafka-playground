@@ -7,10 +7,12 @@ spring:
       - localhost:9092
     listener:
       type: batch
-      concurrency: 1 # consumer 개수 조절
+#      concurrency: 1 # consumer 개수 조절
     consumer:
-#      group-id: poi-logan-consumer-stage-group
-      auto-offset-reset: latest
+#      auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      max-poll-records: 1000
+#      max-poll-records: 1000
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

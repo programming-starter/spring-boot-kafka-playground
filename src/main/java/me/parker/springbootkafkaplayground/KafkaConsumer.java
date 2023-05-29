@@ -10,7 +10,7 @@ public class KafkaConsumer {
 
     @KafkaListener(topics = "my-topic", groupId = "my-group-id")
     public void consume(String message) {
-        System.out.println("Received message: " + message);
+        log.info("Received message: {}", message);
         // 메시지 처리 로직을 작성합니다.
     }
 }
